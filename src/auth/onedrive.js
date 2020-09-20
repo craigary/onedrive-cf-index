@@ -8,6 +8,11 @@ export async function getAccessToken() {
     return Math.floor(Date.now() / 1000)
   }
 
+  let refresh_token = await (
+   await fetch(`https://cy-onedrive.firebaseio.com/refresh_token.json?auth=${FIREBASE_TOKEN}`)).text()
+
+  refresh_token = refresh_token.slice(1, refresh_token.length - 1)
+  
   // Fetch access token from Google Firebase Database
   const data = await (await fetch(`${config.firebase_url}?auth=${FIREBASE_TOKEN}`)).json()
   if (data && data.access_token && timestamp() < data.expire_at) {
@@ -21,14 +26,16 @@ export async function getAccessToken() {
     ? 'https://login.chinacloudapi.cn/common/oauth2/v2.0/token'
     : 'https://login.microsoftonline.com/common/oauth2/v2.0/token'
 
-  const resp = await fetch(oneDriveAuthEndpoint, {
+  const params = {
     method: 'POST',
-    body: `client_id=${config.client_id}&redirect_uri=${config.redirect_uri}&client_secret=${config.client_secret}
-    &refresh_token=${config.refresh_token}&grant_type=refresh_token`,
+    body: `client_id=${config.client_id}&redirect_uri=${config.redirect_uri}&client_secret=${config.client_secret}&refresh_token=${refresh_token}&grant_type=refresh_token`,
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
-  })
+  }
+
+  const resp = await fetch(oneDriveAuthEndpoint, params)
+
   if (resp.ok) {
     console.info('Successfully refreshed access_token.')
     const data = await resp.json()

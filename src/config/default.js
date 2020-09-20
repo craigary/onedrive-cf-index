@@ -4,8 +4,8 @@ const config = {
    * You can use this tool http://heymind.github.io/tools/microsoft-graph-api-auth
    * to get following params: client_id, client_secret, refresh_token & redirect_uri.
    */
-  refresh_token: REFRESH_TOKEN,
-  client_id: '6600e358-9328-4050-af82-0af9cdde796b',
+  // refresh_token: REFRESH_TOKEN,
+  client_id: '8da3f170-8104-43e4-9cde-1e896b09d9ec',
   client_secret: CLIENT_SECRET,
   redirect_uri: 'https://heymind.github.io/tools/microsoft-graph-api-auth',
 
@@ -17,7 +17,7 @@ const config = {
   /**
    * The url for your Firebase Realtime Database storage, we'll cache your refresh_token / access_token here.
    */
-  firebase_url: 'https://onedrive-cf-refresh-token.firebaseio.com/auth.json',
+  firebase_url: 'https://cy-onedrive.firebaseio.com/auth.json',
 
   /**
    * Feature: add OneDriveCN (21Vianet) support
