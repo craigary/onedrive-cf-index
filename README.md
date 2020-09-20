@@ -1,5 +1,7 @@
-[![Hosted on Cloudflare Workers](https://img.shields.io/badge/Hosted%20on-CF%20Workers-f38020?logo=cloudflare&logoColor=f38020&labelColor=282d33)](https://storage.spencerwoo.com/)
-[![Deploy](https://github.com/spencerwooo/onedrive-cf-index/workflows/Deploy/badge.svg)](https://github.com/spencerwooo/onedrive-cf-index/actions?query=workflow%3ADeploy)
+[![Hosted on Cloudflare Workers](https://img.shields.io/badge/Hosted%20on-CF%20Workers-f38020?style=flat-square&logo=cloudflare&logoColor=f38020&labelColor=282d33)](https://storage.spencerwoo.com/)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/craigary/onedrive-cf-index/Deploy?logo=github&style=flat-square)](https://github.com/craigary/onedrive-cf-index/actions?query=workflow%3ADeploy)
+[![gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square)](https://gitmoji.carloscuesta.me)
+
 <image align="right" src="assets/onedrive-cf-index.png" alt="onedrive-cf-index" width="125px" />
 
 <h1>onedrive-cf-index</h1>
