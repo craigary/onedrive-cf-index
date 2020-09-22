@@ -42,12 +42,10 @@ export async function renderFolderView(items, path) {
     el(
       'a',
       [`href="${fileAbsoluteUrl}"`, 'class="item"', size ? `size="${size}"` : ''],
-      (emojiIcon
-        ? el('i', ['class="emoji"'], emojiIcon)
-        : el('i', [`class="${icon}"`], '')) +
-            fileName +
-            el('div', ['style="flex-grow: 1;"'], '') +
-            (fileName === '..' ? '' : el('span', ['class="size"'], readableFileSize(size)))
+      (emojiIcon ? el('i', ['style="font-style: normal"'], emojiIcon) : el('i', [`class="${icon}"`], '')) +
+        fileName +
+        el('div', ['style="flex-grow: 1;"'], '') +
+        (fileName === '..' ? '' : el('span', ['class="size"'], readableFileSize(size)))
     )
 
   const intro = `<div class="intro markdown-body" style="text-align: left; margin-top: 2rem;">
@@ -78,8 +76,12 @@ export async function renderFolderView(items, path) {
                   const charRegex = /\w|\s/
                   const firstNonEmojiPosition = i.name.search(charRegex)
                   if (firstNonEmojiPosition !== 0) {
-                    const headerEmojiStr = i.name.slice(0, firstNonEmojiPosition)
-                    const folderName = i.name.slice(firstNonEmojiPosition).trim()
+                    let headerEmojiStr = i.name.slice(0, firstNonEmojiPosition)
+                    let folderName = i.name.slice(firstNonEmojiPosition).trim()
+                    if (firstNonEmojiPosition === -1) {
+                      headerEmojiStr = i.name
+                      folderName = ''
+                    }
                     return item('', folderName, `${path}${i.name}/`, i.size, headerEmojiStr)
                   }
                   return item('far fa-folder', i.name, `${path}${i.name}/`, i.size)
