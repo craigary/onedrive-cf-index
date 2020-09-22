@@ -8,7 +8,7 @@
 
 🏵 **Yet Another OneDrive Index.** Powered by Cloudflare Workers. Inspired and originated greatly from [heymind/OneDrive-Index-Cloudflare-Worker](https://github.com/heymind/OneDrive-Index-Cloudflare-Worker).
 
-**Note:** This repo is intened for my personal use. Please feel free to check the Original Author on [spencerwooo/onedrive-cf-index](https://github.com/spencerwooo/onedrive-cf-index)
+**Note:** This repo is intened for my personal use. Please feel free to check the original author on [spencerwooo/onedrive-cf-index](https://github.com/spencerwooo/onedrive-cf-index)
 
 <h2>Table of contents</h2>
 
